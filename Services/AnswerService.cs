@@ -16,7 +16,7 @@ namespace CompetitionTrackerAPI.Services
             _context = context;
         }
 
-        public async Task<AnswerDto> CreateAnswerAsync(AnswerDto dto)
+        public async Task<AnswerDto> CreateAnswerAsync(AnswerCreateDto dto)
         {
             var answer = new Answer
             {
@@ -86,7 +86,7 @@ namespace CompetitionTrackerAPI.Services
 
         public async Task<AnswerDto?> EvaluateAnswerAsync(int id, AnswerEvaluationDto dto)
         {
-            var answer = await _context.Answers.SingleAsync(a => a.Id == id);
+            var answer = await _context.Answers.FindAsync(id);
 
             if (answer == null) return null;
 

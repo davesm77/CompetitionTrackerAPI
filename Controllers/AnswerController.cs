@@ -8,7 +8,7 @@ namespace CompetitionTrackerAPI.Controllers
     [Route("api/[controller]")]
     public class AnswerController : ControllerBase
     {
-        private IAnswerService _service;
+        private readonly IAnswerService _service;
 
         public AnswerController(IAnswerService service)
         {
@@ -38,13 +38,13 @@ namespace CompetitionTrackerAPI.Controllers
         {
             var answer = await _service.GetAnswerByIdAsync(id);
 
-            if (answer == null) return BadRequest();
+            if (answer == null) return NotFound();
 
             return Ok(answer);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAnswer(AnswerDto dto)
+        public async Task<IActionResult> CreateAnswer(AnswerCreateDto dto)
         {
             var createdAnswer = await _service.CreateAnswerAsync(dto);
 
@@ -61,13 +61,9 @@ namespace CompetitionTrackerAPI.Controllers
         {
             var evaluatedAnswer = await _service.EvaluateAnswerAsync(id, dto);
 
-            if (evaluatedAnswer == null) return BadRequest();
+            if (evaluatedAnswer == null) return NotFound();
 
-            return CreatedAtAction(
-                nameof(GetAnswer),
-                new {id = evaluatedAnswer.Id},
-                evaluatedAnswer
-            );
+            return Ok(evaluatedAnswer);
         }
     }
 }

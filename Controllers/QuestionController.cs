@@ -8,7 +8,7 @@ namespace CompetitionTrackerAPI.Controllers
     [Route("api/[controller]")]
     public class QuestionController : ControllerBase
     {
-        private IQuestionService _service;
+        private readonly IQuestionService _service;
 
         public QuestionController(IQuestionService service)
         {

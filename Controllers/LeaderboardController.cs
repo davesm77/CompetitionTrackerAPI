@@ -7,7 +7,7 @@ namespace CompetitionTrackerAPI.Controllers
     [Route("api/[controller]")]
     public class LeaderboardController : ControllerBase
     {
-        private ILeaderboardService _service;
+        private readonly ILeaderboardService _service;
 
         public LeaderboardController(ILeaderboardService service)
         {

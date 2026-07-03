@@ -10,7 +10,7 @@ namespace CompetitionTrackerAPI.Controllers{
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private IUserService _service;
+        private readonly IUserService _service;
 
         public UserController(IUserService service)
         {
