@@ -1,5 +1,4 @@
 using CompetitionTrackerAPI.DTOs;
-using CompetitionTrackerAPI.Models;
 
 namespace CompetitionTrackerAPI.Interfaces
 {

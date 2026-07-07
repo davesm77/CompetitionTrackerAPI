@@ -2,7 +2,6 @@ using CompetitionTrackerAPI.Models;
 using CompetitionTrackerAPI.Interfaces;
 
 using CompetitionTrackerAPI.Data;
-using Microsoft.AspNetCore.Mvc;
 using CompetitionTrackerAPI.DTOs;
 using Microsoft.EntityFrameworkCore;
 

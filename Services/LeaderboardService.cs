@@ -1,4 +1,3 @@
-using CompetitionTrackerAPI.Models;
 using CompetitionTrackerAPI.Interfaces;
 
 using CompetitionTrackerAPI.Data;
