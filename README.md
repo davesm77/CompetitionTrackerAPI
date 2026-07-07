@@ -85,7 +85,7 @@ CompetitionTrackerAPI/
 
 ![Swagger UI](docs/SwaggerUI.png)
 
-## DPlánované funkce
+## Plánované funkce
 - [ ] Implementovat JWT autentizaci
 - [ ] Rozšířit nabídku formátu otázek o obrázky
 
